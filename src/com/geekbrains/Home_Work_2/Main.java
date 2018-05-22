@@ -2,18 +2,8 @@ package com.geekbrains.Home_Work_2;
 
 public class Main {
 
-    public static void main(String[] args) {                     //Задача 1
-	int [] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-        for (int i = 0; i <arr.length ; i++) {
-            if(arr[i] == 1){
-                arr[i] = 0;
-                System.out.print("[" + i + "]=" + arr[i] + " ");
-            }
-            else {
-                arr[i] = 1;
-                System.out.print("[" + i + "]=" + arr[i] + " ");
-            }
-        }
+    public static void main(String[] args) {
+        invertArray();
         System.out.println(" ");
         fillArray();
         System.out.println(" ");
@@ -22,6 +12,21 @@ public class Main {
         sqrArray();
         System.out.println(" ");
         MaxMinArray();
+        System.out.println(" ");
+        int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 5, 8, 9, 1};
+        comebackTrueFalse(arr);
+    }
+    public static void invertArray() {                           //Задача 1
+        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 1) {
+                arr[i] = 0;
+                System.out.print("[" + i + "]=" + arr[i] + " ");
+            } else {
+                arr[i] = 1;
+                System.out.print("[" + i + "]=" + arr[i] + " ");
+            }
+        }
     }
     public static void fillArray(){                                //Задача 2
         int [] arr = new int[8];
@@ -69,5 +74,21 @@ public class Main {
             }
         }
         System.out.println("Максимальное: "+ max + " Минимальное:" + min);
+    }
+    public static boolean comebackTrueFalse(int [] array){     //Задача 6
+        boolean result = false;
+        int sum = 0;
+        for (int i = 0; i <array.length ; i++) {
+            sum = sum + array[i];
+        }
+        if (sum%2 == 0){
+            result = true;
+        }
+        if (result == false){
+            System.out.println("В массиве нет точки баланса");
+        }else {
+            System.out.println("В массиве есть точка баланса");
+        }
+    return result;
     }
 }
